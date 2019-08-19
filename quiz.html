@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- link to stylesheet -->
+		<link href="maincss.css" rel="stylesheet" type="text/css">
+		<!-- link to javascript -->
+		<script src="quiz.js"></script>
+		<!-- sets viewport for mobile devices -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- link to font -->
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+	</head>
+
+	<body onload="loadQuestion()">
+
+		<div id="instructions" class="instructions">
+			<h1>How to play</h1>
+			<p>Welcome to the CSS Quiz</p>
+			<p>To start, click the Start Quiz button bellow</p>
+			<p>Each question is worth one point, there are ten questions</p>
+			<p>If you can't answer a question now, use the question bar at the top to go back to that question later</p>
+			<p>Goodluck and have fun!</p>
+
+			<div class="startButton" onclick="startQuiz()">
+				Start Quiz!
+			</div>
+
+			<small>Created by Nash Smith</small>
+		</div>
+
+		<div id="container" class="container hidden">
+			<h1 class="textCenter">Css Quiz</h1>
+
+			<div id="quizBar" class="questionsBar">
+				<div id="1" class="Q current" onclick="questionBar(1)">
+					<span class="qNumber">1</span>
+				</div>
+				<div id="2" class="Q" onclick="questionBar(2)">
+					<span class="qNumber">2</span>
+				</div>
+				<div id="3" class="Q" onclick="questionBar(3)">
+					<span class="qNumber">3</span>
+				</div>
+				<div id="4" class="Q" onclick="questionBar(4)">
+					<span class="qNumber">4</span>
+				</div>
+				<div id="5" class="Q" onclick="questionBar(5)">
+					<span class="qNumber">5</span>
+				</div>
+				<div id="6" class="Q" onclick="questionBar(6)">
+					<span class="qNumber">6</span>
+				</div>
+				<div id="7" class="Q" onclick="questionBar(7)">
+					<span class="qNumber">7</span>
+				</div>
+				<div id="8" class="Q" onclick="questionBar(8)">
+					<span class="qNumber">8</span>
+				</div>
+				<div id="9" class="Q" onclick="questionBar(9)">
+					<span class="qNumber">9</span>
+				</div>
+				<div id="10" class="Q" onclick="questionBar(10)">
+					<span class="qNumber" style="margin-left: 19%;">10</span>
+				</div>
+
+			</div>
+			<!-- Questions Bar -->
+
+			<div id="quizQuestions" class="question">
+				<h2 id="question" class="textCenter">Question</h2>
+
+				<div class="answers textCenter">
+					<div class="topQ">
+						<label for="a" onclick="saveAnswer('a')">
+							<div id="A" class="answer floatLeft A"><input type="radio" name="answer" value="a" id="a"><span id="ansA">A. 1</span></div>
+						</label>
+
+						<label for="b" onclick="saveAnswer('b')">
+							<div id="B" class="answer floatRight B"><input type="radio" name="answer" value="b" id="b"><span id="ansB">B. 2</span></div>
+						</label>
+					</div>
+					<!-- topQ -->
+					<div class="bottomQ">
+						<label for="c" onclick="saveAnswer('c')">
+							<div id="C" class="answer floatLeft C"><input type="radio" name="answer" value="c" id="c"><span id="ansC">C. 6</span></div>
+						</label>
+
+						<label for="d" onclick="saveAnswer('d')">
+							<div id="D" class="answer floatRight D"><input type="radio" name="answer" value="d" id="d"><span id="ansD">D. 8</span></div>
+						</label>
+					</div>
+					<!-- bottomQ -->
+
+					<button id="nextButton" onclick="nextQuestion()">Next</button>
+					<button onclick="finishQuiz()">Finish Quiz</button>
+
+				</div> 
+				<!-- answers -->
+			</div>
+			<!-- question -->
+		</div>
+		<!-- Container -->
+
+		<div id="resultsContainer" class="hidden resultsContainer">
+			<div class="results">
+				
+				<h1>The Results Are In!</h1>
+
+				<div class="figures">
+					
+					<p id="score">You scored 10 out of 10!</p>
+					<p id="perc">That is 100%</p>
+					<p id="grade">You got an A+</p>
+				</div>
+
+			</div>
+
+			<div id="questionResults" class="questionResults">
+				
+			</div>
+		</div><!-- results container -->
+
+
+	</body>
+</html>
